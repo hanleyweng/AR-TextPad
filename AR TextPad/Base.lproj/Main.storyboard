@@ -1,28 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="AR_TextPad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPk-Ig-oy0" userLabel="Stack View Img">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3so-mU-5oS" userLabel="Image View Left">
+                                        <rect key="frame" x="0.0" y="0.0" width="333.5" height="375"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LUz-1f-ZUv" userLabel="Image View Right">
+                                        <rect key="frame" x="333.5" y="0.0" width="333.5" height="375"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3so-mU-5oS" firstAttribute="top" secondItem="bPk-Ig-oy0" secondAttribute="top" id="7RT-Cy-2wD"/>
+                                    <constraint firstAttribute="bottom" secondItem="3so-mU-5oS" secondAttribute="bottom" id="B6U-Ij-9r5"/>
+                                    <constraint firstItem="LUz-1f-ZUv" firstAttribute="top" secondItem="bPk-Ig-oy0" secondAttribute="top" id="C7h-vj-zBI"/>
+                                    <constraint firstAttribute="bottom" secondItem="LUz-1f-ZUv" secondAttribute="bottom" id="Mzf-Ot-DYt"/>
+                                    <constraint firstItem="LUz-1f-ZUv" firstAttribute="width" secondItem="3so-mU-5oS" secondAttribute="width" id="nrC-82-dAm"/>
+                                    <constraint firstItem="3so-mU-5oS" firstAttribute="leading" secondItem="bPk-Ig-oy0" secondAttribute="leading" id="qOL-ni-ezH"/>
+                                    <constraint firstAttribute="trailing" secondItem="LUz-1f-ZUv" secondAttribute="trailing" id="sjE-QC-cOV"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRs-lG-ZfG" userLabel="Stack View AR">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <subviews>
+                                    <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Usd-9t-0Y3" userLabel="ARSCNView Left">
+                                        <rect key="frame" x="0.0" y="0.0" width="333.5" height="375"/>
+                                    </arscnView>
+                                    <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkf-pd-uZl" userLabel="ARSCNView Right">
+                                        <rect key="frame" x="333.5" y="0.0" width="333.5" height="375"/>
+                                    </arscnView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fkf-pd-uZl" secondAttribute="trailing" id="1bL-uy-U8N"/>
+                                    <constraint firstAttribute="bottom" secondItem="fkf-pd-uZl" secondAttribute="bottom" id="JCK-wI-eAI"/>
+                                    <constraint firstItem="fkf-pd-uZl" firstAttribute="top" secondItem="hRs-lG-ZfG" secondAttribute="top" id="PlM-7M-sBh"/>
+                                    <constraint firstItem="Usd-9t-0Y3" firstAttribute="leading" secondItem="hRs-lG-ZfG" secondAttribute="leading" id="SXb-p8-Qqf"/>
+                                    <constraint firstAttribute="bottom" secondItem="Usd-9t-0Y3" secondAttribute="bottom" id="hER-qL-3qJ"/>
+                                    <constraint firstItem="fkf-pd-uZl" firstAttribute="width" secondItem="Usd-9t-0Y3" secondAttribute="width" id="rpX-rh-kSN"/>
+                                    <constraint firstItem="Usd-9t-0Y3" firstAttribute="top" secondItem="hRs-lG-ZfG" secondAttribute="top" id="xyO-mh-Y7o"/>
+                                </constraints>
+                            </stackView>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS" userLabel="Scene View Source">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </arscnView>
                         </subviews>
-                        <color key="backgroundColor" white="0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
-                            <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
-                            <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
-                            <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
+                            <constraint firstItem="bPk-Ig-oy0" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="6Ph-Kr-IHF"/>
+                            <constraint firstItem="hRs-lG-ZfG" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="7ff-xd-GMR"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="93K-pG-kp6"/>
+                            <constraint firstItem="bPk-Ig-oy0" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="BzG-Hx-OnX"/>
+                            <constraint firstItem="bPk-Ig-oy0" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="CIp-11-vSh"/>
+                            <constraint firstItem="bPk-Ig-oy0" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="bgy-L3-RJd"/>
+                            <constraint firstAttribute="trailing" secondItem="hRs-lG-ZfG" secondAttribute="trailing" id="bnk-7z-lhz"/>
+                            <constraint firstItem="hRs-lG-ZfG" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="dLi-4w-szJ"/>
+                            <constraint firstItem="hRs-lG-ZfG" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="gxl-Eh-KcU"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="hNr-Dg-E7y"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="obA-7G-ltJ"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="qsp-9t-ELh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
@@ -32,6 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139.880059970015" y="132"/>
         </scene>
     </scenes>
 </document>
