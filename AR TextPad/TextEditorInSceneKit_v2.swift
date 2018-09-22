@@ -39,7 +39,7 @@ class TextEditHelperClass {
         textView = textViewRef
         
         // UITextView SETUP
-        textView.becomeFirstResponder()
+        // textView.becomeFirstResponder()
         
         // CREATE SCENE NODES
         createPlaneNode()

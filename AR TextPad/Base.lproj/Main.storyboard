@@ -74,15 +74,22 @@ Loading …</string>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro-image" translatesAutoresizingMaskIntoConstraints="NO" id="MEz-jQ-duU">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bPk-Ig-oy0" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="6Ph-Kr-IHF"/>
                             <constraint firstItem="hRs-lG-ZfG" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="7ff-xd-GMR"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="93K-pG-kp6"/>
+                            <constraint firstItem="MEz-jQ-duU" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="B8z-M5-C5o"/>
                             <constraint firstItem="bPk-Ig-oy0" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="BzG-Hx-OnX"/>
                             <constraint firstItem="bPk-Ig-oy0" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="CIp-11-vSh"/>
+                            <constraint firstItem="MEz-jQ-duU" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="J7I-IA-Zel"/>
+                            <constraint firstItem="MEz-jQ-duU" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="QMh-EM-VVj"/>
                             <constraint firstItem="OaQ-Mm-HYH" firstAttribute="centerY" secondItem="U0K-SW-4ec" secondAttribute="centerY" id="TtL-ob-9h8"/>
+                            <constraint firstItem="MEz-jQ-duU" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="U4g-fe-uTA"/>
                             <constraint firstItem="bPk-Ig-oy0" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="bgy-L3-RJd"/>
                             <constraint firstAttribute="trailing" secondItem="hRs-lG-ZfG" secondAttribute="trailing" id="bnk-7z-lhz"/>
                             <constraint firstItem="hRs-lG-ZfG" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="dLi-4w-szJ"/>
@@ -97,6 +104,7 @@ Loading …</string>
                     <connections>
                         <outlet property="imageViewLeft" destination="3so-mU-5oS" id="BMy-rZ-iZc"/>
                         <outlet property="imageViewRight" destination="LUz-1f-ZUv" id="e2A-jK-tKz"/>
+                        <outlet property="introImageView" destination="MEz-jQ-duU" id="Flk-DJ-mB5"/>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
                         <outlet property="sceneViewLeft" destination="Usd-9t-0Y3" id="14c-La-ag7"/>
                         <outlet property="sceneViewRight" destination="fkf-pd-uZl" id="fJC-qy-sTO"/>
@@ -108,4 +116,7 @@ Loading …</string>
             <point key="canvasLocation" x="139.880059970015" y="132"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="intro-image" width="1950" height="900"/>
+    </resources>
 </document>

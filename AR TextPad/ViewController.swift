@@ -24,6 +24,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, UITextViewDelegate {
     // UI - Text Editor
     @IBOutlet weak var textView: UITextView!
     
+    @IBOutlet weak var introImageView: UIImageView!
+    
     // PARAMETRES
     let viewBackgroundColor : UIColor = UIColor.black // UIColor.white
     
@@ -121,6 +123,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UITextViewDelegate {
     override var keyCommands: [UIKeyCommand]? {
         let keyCommands = [
             UIKeyCommand(input: "1", modifierFlags: .command, action: #selector(keyPressed_cmd_)),
+            UIKeyCommand(input: "R", modifierFlags: .command, action: #selector(keyPressed_cmd_)),
             ]
         // Nice todo; add keyboard shortcut to reset entire tracking scene again. (to compensate for weird drifting)
         return keyCommands
@@ -130,6 +133,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, UITextViewDelegate {
         switch sender.input! {
         case "1":
             textEditHelperClass.customKeyPressed_toggleMode(sender: sender)
+        case "R":
+            introImageView.isHidden = !introImageView.isHidden
+            if introImageView.isHidden {
+                textView.becomeFirstResponder()
+                // Refresh Image with Cursor
+                textEditHelperClass.light_reflectTextChange()
+            } else {
+                textView.endEditing(true)
+            }
         default:
             break
         }
