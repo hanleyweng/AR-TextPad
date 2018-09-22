@@ -13,6 +13,7 @@
 		AE02051E2156E3FC001EE01B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE02051C2156E3FC001EE01B /* Main.storyboard */; };
 		AE0205202156E3FE001EE01B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE02051F2156E3FE001EE01B /* Assets.xcassets */; };
 		AE0205232156E3FE001EE01B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0205212156E3FE001EE01B /* LaunchScreen.storyboard */; };
+		AED8A1602156E73B005375A3 /* ARSCNStereoViewClass_v3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED8A15F2156E73B005375A3 /* ARSCNStereoViewClass_v3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AE02051F2156E3FE001EE01B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE0205222156E3FE001EE01B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE0205242156E3FE001EE01B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AED8A15F2156E73B005375A3 /* ARSCNStereoViewClass_v3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNStereoViewClass_v3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				AE0205162156E3FC001EE01B /* AppDelegate.swift */,
 				AE0205182156E3FC001EE01B /* art.scnassets */,
 				AE02051A2156E3FC001EE01B /* ViewController.swift */,
+				AED8A15F2156E73B005375A3 /* ARSCNStereoViewClass_v3.swift */,
 				AE02051C2156E3FC001EE01B /* Main.storyboard */,
 				AE02051F2156E3FE001EE01B /* Assets.xcassets */,
 				AE0205212156E3FE001EE01B /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AED8A1602156E73B005375A3 /* ARSCNStereoViewClass_v3.swift in Sources */,
 				AE02051B2156E3FC001EE01B /* ViewController.swift in Sources */,
 				AE0205172156E3FC001EE01B /* AppDelegate.swift in Sources */,
 			);
