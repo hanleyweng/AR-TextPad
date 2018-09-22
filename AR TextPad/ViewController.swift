@@ -69,6 +69,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UITextViewDelegate {
         sceneView.session.pause()
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////
     // MARK: - ARSCNViewDelegate
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
@@ -115,4 +116,24 @@ class ViewController: UIViewController, ARSCNViewDelegate, UITextViewDelegate {
     func textViewDidChangeSelection(_ textView: UITextView) {
         textEditHelperClass.textViewDidChangeSelection_reflectTextChanges()
     }
+    
+    // KEYBOARD COMMANDS
+    override var keyCommands: [UIKeyCommand]? {
+        let keyCommands = [
+            UIKeyCommand(input: "1", modifierFlags: .command, action: #selector(keyPressed_cmd_)),
+            ]
+        // Nice todo; add keyboard shortcut to reset entire tracking scene again. (to compensate for weird drifting)
+        return keyCommands
+    }
+    
+    @objc func keyPressed_cmd_(sender: UIKeyCommand) {
+        switch sender.input! {
+        case "1":
+            textEditHelperClass.customKeyPressed_toggleMode(sender: sender)
+        default:
+            break
+        }
+    }
+    
+    
 }

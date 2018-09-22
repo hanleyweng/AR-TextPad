@@ -149,7 +149,7 @@ class TextEditHelperClass {
     
     var _MODE_FIXED = true
     
-    func customKeyPressed_handle(sender: UIKeyCommand) {
+    func customKeyPressed_toggleMode(sender: UIKeyCommand) {
         toggleMode()
     }
     
