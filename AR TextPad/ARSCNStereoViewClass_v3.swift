@@ -26,8 +26,8 @@ class ARSCNStereoViewClass {
     
     // Set eyeFOV and cameraImageScale. Uncomment any of the below lines to change FOV.
     //    let eyeFOV = 38.5; var cameraImageScale = 1.739; // (FOV: 38.5 ± 2.0) Brute-force estimate based on iPhone7+
-    //    let eyeFOV = 60; var cameraImageScale = 3.478; // Calculation based on iPhone7+ // <- Works ok for cheap mobile headsets. Rough guestimate.
-    let eyeFOV = 90; var cameraImageScale = 6.0; // (Scale: 6 ± 1.0) Very Rough Guestimate.
+    let eyeFOV = 60; var cameraImageScale = 3.478; // Calculation based on iPhone7+ // <- Works ok for cheap mobile headsets. Rough guestimate.
+    //  let eyeFOV = 90; var cameraImageScale = 6.0; // (Scale: 6 ± 1.0) Very Rough Guestimate.
     //    let eyeFOV = 120; var cameraImageScale = 8.756; // Rough Guestimate.
     
     func viewDidLoad_setup(iSceneView: ARSCNView, iSceneViewLeft: ARSCNView, iSceneViewRight: ARSCNView, iImageViewLeft: UIImageView, iImageViewRight: UIImageView) {
