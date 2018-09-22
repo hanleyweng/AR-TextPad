@@ -61,6 +61,19 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS" userLabel="Scene View Source">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </arscnView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OaQ-Mm-HYH">
+                                <rect key="frame" x="213.5" y="67.5" width="240" height="240"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="XQS-Br-x9b"/>
+                                    <constraint firstAttribute="width" constant="240" id="eOs-77-WEs"/>
+                                </constraints>
+                                <string key="text">TextPad.
+Loading …</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -69,11 +82,13 @@
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="93K-pG-kp6"/>
                             <constraint firstItem="bPk-Ig-oy0" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="BzG-Hx-OnX"/>
                             <constraint firstItem="bPk-Ig-oy0" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="CIp-11-vSh"/>
+                            <constraint firstItem="OaQ-Mm-HYH" firstAttribute="centerY" secondItem="U0K-SW-4ec" secondAttribute="centerY" id="TtL-ob-9h8"/>
                             <constraint firstItem="bPk-Ig-oy0" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="bgy-L3-RJd"/>
                             <constraint firstAttribute="trailing" secondItem="hRs-lG-ZfG" secondAttribute="trailing" id="bnk-7z-lhz"/>
                             <constraint firstItem="hRs-lG-ZfG" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="dLi-4w-szJ"/>
                             <constraint firstItem="hRs-lG-ZfG" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="gxl-Eh-KcU"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="hNr-Dg-E7y"/>
+                            <constraint firstItem="OaQ-Mm-HYH" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="hk1-sp-DN0"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="obA-7G-ltJ"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="qsp-9t-ELh"/>
                         </constraints>
@@ -85,6 +100,7 @@
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
                         <outlet property="sceneViewLeft" destination="Usd-9t-0Y3" id="14c-La-ag7"/>
                         <outlet property="sceneViewRight" destination="fkf-pd-uZl" id="fJC-qy-sTO"/>
+                        <outlet property="textView" destination="OaQ-Mm-HYH" id="rMm-ph-RKC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
