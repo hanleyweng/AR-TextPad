@@ -80,7 +80,11 @@
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
                     <connections>
+                        <outlet property="imageViewLeft" destination="3so-mU-5oS" id="BMy-rZ-iZc"/>
+                        <outlet property="imageViewRight" destination="LUz-1f-ZUv" id="e2A-jK-tKz"/>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <outlet property="sceneViewLeft" destination="Usd-9t-0Y3" id="14c-La-ag7"/>
+                        <outlet property="sceneViewRight" destination="fkf-pd-uZl" id="fJC-qy-sTO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>

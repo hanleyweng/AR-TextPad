@@ -12,22 +12,32 @@ import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
+    // UI - Default AR Scene View
     @IBOutlet var sceneView: ARSCNView!
+    
+    // UI - Stereoscopic AR
+    @IBOutlet weak var imageViewLeft: UIImageView!
+    @IBOutlet weak var imageViewRight: UIImageView!
+    @IBOutlet weak var sceneViewLeft: ARSCNView!
+    @IBOutlet weak var sceneViewRight: ARSCNView!
+    
+    // PARAMETRES
+    let viewBackgroundColor : UIColor = UIColor.black // UIColor.white
+    
+    // CLASSES
+    var arScnStereoViewClass = ARSCNStereoViewClass()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Scene/View setup
+        self.view.backgroundColor = viewBackgroundColor
         
         // Set the view's delegate
         sceneView.delegate = self
         
-        // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
-        
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
-        // Set the scene to the view
-        sceneView.scene = scene
+        // Setup Stereo SceneView (including showing statistics, creating a new scene)
+        arScnStereoViewClass.viewDidLoad_setup(iSceneView: sceneView, iSceneViewLeft: sceneViewLeft, iSceneViewRight: sceneViewRight, iImageViewLeft: imageViewLeft, iImageViewRight: imageViewRight)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +67,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         return node
     }
 */
+    
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        DispatchQueue.main.async {
+            // UPDATE AR SCENE
+            // ...
+            
+            // UPDATE STEREO VIEWS
+            self.arScnStereoViewClass.updateFrame()
+        }
+    }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
