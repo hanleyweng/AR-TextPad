@@ -56,7 +56,7 @@ class ARSCNStereoViewClass {
         
         // Set Debug Options
         // sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin]
-        sceneView.debugOptions = .showFeaturePoints
+        // sceneView.debugOptions = .showFeaturePoints
         
         // Scene setup
         sceneView.isHidden = true

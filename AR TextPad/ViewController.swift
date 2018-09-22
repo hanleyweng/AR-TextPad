@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ViewController: UIViewController, ARSCNViewDelegate, UITextViewDelegate {
     
     // UI - Default AR Scene View
     @IBOutlet var sceneView: ARSCNView!
@@ -30,10 +30,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     // CLASSES
     var arScnStereoViewClass = ARSCNStereoViewClass()
     var planeVisualizerHelperClass = PlaneVisualizerHelperClass()
+    var textEditHelperClass = TextEditHelperClass()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ////////////////////////////////////////////////////////////////
         // Scene/View setup
         self.view.backgroundColor = viewBackgroundColor
         
@@ -42,6 +44,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Setup Stereo SceneView (including showing statistics, creating a new scene)
         arScnStereoViewClass.viewDidLoad_setup(iSceneView: sceneView, iSceneViewLeft: sceneViewLeft, iSceneViewRight: sceneViewRight, iImageViewLeft: imageViewLeft, iImageViewRight: imageViewRight)
+        
+        ////////////////////////////////////////////////////////////////
+        // Setup Text Editor
+        textView.delegate = self
+        textEditHelperClass.setup(sceneViewRef: sceneView, textViewRef: textView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,7 +83,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         DispatchQueue.main.async {
             // UPDATE AR SCENE
-            // ...
+            // UPDATE NODES THAT ARE FIXED TO THE SCREEN // (This is the best place to update them, prior to self.updateFrame(), and neither in willRenderScene nor didRenderScene.)
+            self.textEditHelperClass.updateFrame()
             
             // UPDATE STEREO VIEWS
             self.arScnStereoViewClass.updateFrame()
@@ -108,5 +116,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////////////////
+    // MARK: - UITextView Delegate
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        textEditHelperClass.textViewDidChangeSelection_reflectTextChanges()
     }
 }
