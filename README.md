@@ -1,4 +1,4 @@
-# AR-TextPad
+# AR TextPad
 Typing in Augmented Reality demo.
 
 ![](post-media/3b-typing.gif)
@@ -12,14 +12,17 @@ Running: Scenekit.
 NOTE: A Bluetooth Wireless Keyboard is required.
 NOTE: An AR see-through headset like the Merge VR is required.
 
-![](outside-view.jpg)
+![](post-media/outside-view.jpg)
 
 # Instructions
+
 Connect a Bluetooth Keyboard to your iPhone.
+
 Type CMD+R to begin.
+
 Type CMD+1 to toggle between having the text-view fixed to your screen or the world. 
 
-![](instructions.jpg)
+![](post-media/instructions.jpg)
 
 # Building Process (see commit history)
 
